@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* ===== Animated Coding Background ===== */
+        #code-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            background: #020617; /* dark slate */
+        }
+
+        .code {
+            position: absolute;
+            color: rgba(45, 212, 191, 0.25); /* teal */
+            font-family: monospace;
+            font-size: 14px;
+            animation: floatUp linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-gray-100">
+
+<!-- Animated Background -->
+<div id="code-bg"></div>
+
+<nav class="bg-gray-800/80 backdrop-blur p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold text-teal-400">Divyanshi Saini.</h1>
+        <div class="space-x-4">
+            <a href="/" class="hover:text-teal-400 transition">Home</a>
+            <a href="/projects" class="hover:text-teal-400 transition">Projects</a>
+            <a href="/contact" class="hover:text-teal-400 transition">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 py-8">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="bg-gray-800/80 backdrop-blur text-center py-4 text-sm text-gray-400">
+    © 2026 Divyanshi Saini. Built with Flask.
+</footer>
+
+<!-- Background Animation Script -->
+<script>
+    const symbols = [
+        '{}', '</>', '()', '=>', 'let', 'const',
+        'if', 'else', 'while', 'for', 'def', 'class'
+    ];
+
+    const container = document.getElementById('code-bg');
+    const count = 45;
+
+    for (let i = 0; i < count; i++) {
+        const span = document.createElement('span');
+        span.className = 'code';
+        span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        span.style.left = Math.random() * 100 + 'vw';
+        span.style.animationDuration = 12 + Math.random() * 18 + 's';
+        span.style.fontSize = 12 + Math.random() * 14 + 'px';
+        span.style.animationDelay = Math.random() * 10 + 's';
+        container.appendChild(span);
+    }
+</script>
+
+</body>
+</html>

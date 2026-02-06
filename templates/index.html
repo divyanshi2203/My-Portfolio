@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Portfolio{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12">
+
+    <!-- Text -->
+    <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-5xl font-extrabold mb-6 leading-tight">
+            Hi, I’m <span class="text-teal-400">Divyanshi Saini</span> 👋
+        </h2>
+
+        <p class="text-gray-300 text-lg mb-6 max-w-xl">
+            A Computer Science Engineering student specializing in
+            <span class="text-teal-400">AI & ML</span>, passionate about
+            Python development and building real-world web applications
+            using Flask and Django.
+        </p>
+
+        <div class="flex gap-4 justify-center md:justify-start">
+            <a href="/projects"
+               class="bg-teal-500 hover:bg-teal-600 text-gray-900 px-6 py-3 rounded-lg font-semibold transition">
+                View Projects
+            </a>
+            <a href="/contact"
+               class="border border-teal-400 hover:bg-teal-400 hover:text-gray-900 px-6 py-3 rounded-lg transition">
+                Contact Me
+            </a>
+        </div>
+    </div>
+
+    <!-- Image -->
+    <div class="md:w-1/2 flex justify-center">
+        <img
+            src="{{ url_for('static', filename='images/profile.jpg') }}"
+            alt="Divyanshi Saini"
+            class="w-72 h-72 object-cover rounded-full border-4 border-teal-400 shadow-lg"
+        >
+    </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="mt-24 max-w-4xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-6 text-teal-400">About Me</h3>
+
+    <p class="text-gray-300 leading-relaxed">
+        I am currently pursuing a B.Tech in Computer Science and Engineering
+        with a specialization in Artificial Intelligence and Machine Learning
+        from MIT Moradabad. I enjoy transforming ideas into functional
+        applications and continuously improving my problem-solving skills.
+        <br><br>
+        My interests lie in backend development, learning new technologies,
+        and building scalable systems that solve real-world problems.
+    </p>
+</section>
+
+<!-- ===== SKILLS SECTION ===== -->
+<section class="mt-24">
+    <h3 class="text-3xl font-bold text-center mb-12 text-teal-400">
+        Skills & Technologies
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-8 rounded-xl hover:scale-105 transition">
+            <h4 class="text-xl font-semibold mb-3">Backend Development</h4>
+            <p class="text-gray-400">
+                Python, Flask, Django, REST APIs, Authentication
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-8 rounded-xl hover:scale-105 transition">
+            <h4 class="text-xl font-semibold mb-3">Frontend Development</h4>
+            <p class="text-gray-400">
+                HTML, CSS, Tailwind CSS, Responsive Design
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-8 rounded-xl hover:scale-105 transition">
+            <h4 class="text-xl font-semibold mb-3">Tools & Platforms</h4>
+            <p class="text-gray-400">
+                Git, GitHub, Linux, VS Code
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHAT I DO SECTION ===== -->
+<section class="mt-24 max-w-5xl mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-12 text-teal-400">
+        What I Love Doing
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-10">
+        <div class="bg-gray-800 p-8 rounded-xl">
+            <h4 class="text-xl font-semibold mb-2">💻 Web Development</h4>
+            <p class="text-gray-400">
+                Designing and developing clean, functional, and scalable
+                web applications using modern backend frameworks.
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-8 rounded-xl">
+            <h4 class="text-xl font-semibold mb-2">🧠 Learning AI & ML</h4>
+            <p class="text-gray-400">
+                Exploring machine learning concepts and applying them
+                to practical projects and experiments.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CALL TO ACTION ===== -->
+<section class="mt-32 text-center">
+    <h3 class="text-4xl font-bold mb-4">
+        Let’s Build Something Together 🚀
+    </h3>
+    <p class="text-gray-400 mb-8">
+        I’m always open to learning, collaboration, and new opportunities.
+    </p>
+    <a href="/contact"
+       class="bg-teal-500 hover:bg-teal-600 text-gray-900 px-8 py-4 rounded-lg font-semibold transition">
+        Get in Touch
+    </a>
+</section>
+
+{% endblock %}
