@@ -12,7 +12,7 @@ def home():
 def projects():
     project_list = [
         {
-            "name": "Portfolio Website",
+            "name": "Portfolio-Website",
             "description": "Personal portfolio built with Flask and Tailwind CSS.",
             "github": "https://github.com/yourusername/portfolio"
         },
