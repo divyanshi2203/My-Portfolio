@@ -1,2 +1,2 @@
 # My-Portfolio
-My first portfolio built using flask.
+My first portfolio built using flask and HTML
